@@ -1,11 +1,11 @@
 function simpleNumbers(a){
-    resultArray = []
+    resultArray = [];
     num:
-    for (let i = 2; resultArray.length < a; i++) { 
+    for (let i = 1; resultArray.length < a; i++) { 
 
         for (let j = 2; j < resultArray.length; j++) { 
             p = resultArray[j];
-            if (p > 1 && 0 === i % p)
+            if (i % j == 0)
             continue num;
         }
         resultArray.push(i);
