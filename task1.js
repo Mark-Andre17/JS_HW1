@@ -1,15 +1,16 @@
 function simpleNumbers(a){
-    const notSimple = []
-    const resultArray = [];
-    for (let i = 2; i <= a; ++i){
-        if (!notSimple[i]){
-            resultArray.push(i);
-            for (let b = i * 2; b <= a; b += i){
-                notSimple[b] = true;
-            }
+    resultArray = []
+    num:
+    for (let i = 2; resultArray.length < a; i++) { 
+
+        for (let j = 2; j < resultArray.length; j++) { 
+            p = resultArray[j];
+            if (p > 1 && 0 === i % p)
+            continue num;
         }
+        resultArray.push(i);
     }
-    return resultArray;
+return resultArray;
 }
 
-console.log(simpleNumbers(process.argv[2]));
+console.log(simpleNumbers(+process.argv[2]));

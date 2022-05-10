@@ -90,26 +90,28 @@ function clearBasket() {
 }
 
 function contentsBasket() {
-    totalAmount = 0;
-    totalSumm = 0;
+    result = {
+        totalAmount: 0,
+        totalSumm: 0,
+    }
     basket.forEach((elem) => {
-        totalAmount += elem.amount
-        totalSumm += goods[elem.goodId].price * elem.amount;
+        result.totalAmount += elem.amount
+        result.totalSumm += goods[elem.goodId].price * elem.amount;
     });
-    return `В корзине нахдится ${totalAmount} товаров на сумму ${totalSumm.toFixed(2)}`
+    return result
 }
 
 
 // 
-console.log('Начальное состояние корзины: \n', basket);
+// console.log('Начальное состояние корзины: \n', basket);
 
-console.log(addInBasket(2, 3, 2));
+// console.log(addInBasket(2, 3, 2));
 
-console.log(delFromBasket(5, 1, 1));
+// console.log(delFromBasket(5, 1, 1));
 
-console.log('Корзина после добавления/удаления товаров: \n', basket);
+// console.log('Корзина после добавления/удаления товаров: \n', basket);
 
 console.log(contentsBasket());
 
-console.log(clearBasket());
-console.log(basket);
+// console.log(clearBasket());
+// console.log(basket);
